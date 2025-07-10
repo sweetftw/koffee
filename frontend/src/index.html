@@ -1,78 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oi&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <div id="app">
-      <header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <img src="../assets/cup_coffee.png" alt="" srcset="">
+      <div>
         <h1>Koffee</h1>
         <p>Monte um café do seu jeito especial</p>
-      </header>
-      <main>
-        <div id="content" class="content-container">
-          <div class="card-container">
-            <p class="card-title">Ingredientes Base</p>
-            <div class="selection-container">
-              <p>Selecione até 3 ingredientes base para bebida</p>
-              <div
-                id="list-selection-ingredients"
-                class="list-selection-ingredients"
-              ></div>
-              <div class="ingredients-button-wrap"></div>
-            </div>
+      </div>
+    </header>
+    <main>
+      <div id="content" class="content-container">
+        <div class="card-container">
+          <p class="card-title">Ingredientes Base</p>
+          <div class="selection-container">
+            <img src="../assets/mocha.png" class="mocha-image" alt="" srcset="">
+            <p>Selecione até 3 ingredientes base para bebida</p>
+            <div id="list-selection-ingredients" class="list-selection-ingredients"></div>
+            <div class="ingredients-button-wrap"></div>
           </div>
-          <div class="card-container">
-            <p class="card-title">Turbine seu cafe</p>
-            <div class="selection-container">
-              <p>Selecione até 2 adicionais extras</p>
-              <div
-                id="list-selection-additional"
-                class="list-selection-ingredients"
-              ></div>
-              <div class="ingredients-button-wrap"></div>
-            </div>
+        </div>
+        <div class="card-container">
+
+          <p class="card-title">Turbine seu café</p>
+          <div class="selection-container">
+            <img src="../assets/glass.png" class="glass-image" alt="" srcset="">
+            <p>Selecione até 2 adicionais extras</p>
+            <div id="list-selection-additional" class="list-selection-ingredients"></div>
+            <div class="ingredients-button-wrap"></div>
           </div>
-          <div class="card-container">
-            <p class="card-title">Resumo</p>
-            <div class="selection-container">
-              <p>Sua Receita</p>
-              <p id="especial-coffee-name"></p>
-              <p id="coffee-name"></p>
-              <div id="list-selection-recipe" class="list-selection-recipe">
-                <ul id="item-list-selection-recipe"></ul>
-              </div>
-              <div class="ingredients-button-wrap">
-                <button id="ingredients-recipe-button-clean" type="button">
-                  Limpar Pedido
-                </button>
-                <button id="ingredients-recipe-button-submit" type="button">
-                  Confirmar Pedido
-                </button>
-              </div>
+        </div>
+        <div class="card-container">
+          <p class="card-title">Resumo</p>
+          <div class="selection-container">
+            <p>Sua Receita</p>
+            <p id="especial-coffee-name"></p>
+            <p id="coffee-name"></p>
+            <div id="list-selection-recipe" class="list-selection-recipe">
+              <ul id="item-list-selection-recipe"></ul>
+            </div>
+            <div class="ingredients-button-wrap">
+              <button id="ingredients-recipe-button-clean" type="button">
+                Limpar Pedido
+              </button>
+              <button id="ingredients-recipe-button-submit" type="button">
+                Confirmar Pedido
+              </button>
             </div>
           </div>
         </div>
-      </main>
-    </div>
-    <script type="module" src="app.js"></script>
-  </body>
+      </div>
+      <img src="../assets/smile.png" class="smile-image" alt="" srcset="">
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+
 </html>
