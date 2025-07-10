@@ -1,0 +1,26 @@
+{
+  "name": "coffee-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --env-file=../.env src/server.js",
+    "migrate": "node --env-file=../.env src/migrations/migrate.js",
+    "cypress:web": "npx cypress open",
+    "cypress:headless": "npx cypress run --browser electron"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.0",
+    "nodemon": "^3.1.10"
+  }
+}

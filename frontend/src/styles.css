@@ -1,0 +1,241 @@
+/* RESET CSS INIT */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+ul,
+li {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* RESET CSS END */
+
+html {
+  background-color: #020947;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Roboto", sans-serif;
+  padding: 5vh 20vw;
+
+  h1 {
+    font-family: "Oi", serif;
+    font-weight: 400;
+    font-size: 52px;
+    color: #ff8412;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+  }
+}
+
+.content-container {
+  width: 100vw;
+  padding: 2vh 4vw;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.card-container {
+  .card-title {
+    font-family: "Titan One", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff8412;
+  }
+}
+
+.selection-container {
+  min-width: 400px;
+  min-height: 400px;
+  padding: 12px;
+  background-color: #ffecbe;
+  border-radius: 8px;
+  border: solid 2px #010525;
+  box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+
+  p {
+    text-align: start;
+    padding: 4px 8px;
+    color: #010525;
+    font-weight: bold;
+  }
+
+  .list-selection-ingredients {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 4px solid black */
+    padding: 4px 8px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+      gap: 6px;
+    }
+  }
+
+  .ingredients-button-wrap {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 100%;
+      background-color: #010525;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin: 0 16px;
+    }
+  }
+}
+
+.selectable-li {
+  min-width: 160px;
+  padding: 10px 20px;
+  margin: 4px 0;
+  color: white;
+  background-color: #2f3eaf;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  list-style: none;
+
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.selectable-li:hover {
+  background-color: #010525;
+  border-color: #030e70;
+}
+
+.selectable-li.selected {
+  background-color: #010525;
+  border-color: #020947;
+}
+
+.selectable-li.selected:hover {
+  background-color: #020947;
+  border-color: #030e70;
+}
+
+.selectable-li.selected::before {
+  content: "✓ ";
+  font-weight: bold;
+  margin-right: 8px;
+}

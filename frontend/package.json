@@ -1,0 +1,24 @@
+{
+  "name": "coffee-app-web",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --watch src --env-file=../.env src/server.js ",
+    "cypress:web": "npx cypress open",
+    "cypress:headless": "npx cypress run --browser electron",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.0",
+    "nodemon": "^3.1.10"
+  }
+}
