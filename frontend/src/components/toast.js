@@ -157,17 +157,22 @@ export class ToastSystem {
             }
 
             /* Toast Types */
-            .toast.toast-success {
-                background: #28a745;
-            }
 
             .toast.toast-error {
                 background: #dc3545;
+                border: solid 2px #010525;
+                box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -webkit-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -moz-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
             }
 
             .toast.toast-warning {
                 background: #ffc107;
                 color: #333;
+                border: solid 2px #010525;
+                box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -webkit-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -moz-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
             }
 
             .toast.toast-warning .toast-close {
@@ -175,12 +180,13 @@ export class ToastSystem {
             }
 
             .toast.toast-info {
-                background: #17a2b8;
+                background: #2f3eaf;
+                border: solid 2px #010525;
+                box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -webkit-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
+                -moz-box-shadow: 10px 10px 1px -1px rgba(0, 0, 0, 0.34);
             }
 
-            .toast.toast-dark {
-                background: #343a40;
-            }
 
             .toast.toast-light {
                 background: #f8f9fa;
@@ -289,7 +295,6 @@ export class ToastSystem {
 
   getIcon(type) {
     const icons = {
-      success: "✓",
       error: "✕",
       warning: "⚠",
       info: "ℹ",

@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coffee App</title>
+  <title>Koffee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../assets/cup_coffee.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -52,6 +53,10 @@
             <p id="coffee-name"></p>
             <div id="list-selection-recipe" class="list-selection-recipe">
               <ul id="item-list-selection-recipe"></ul>
+              <div class="list-selection-total-container">
+                <span style="padding-left: 24px;">Total:</span>
+                <span id="list-selection-total" class="list-selection-total">R$ 0.00</span>
+              </div>
             </div>
             <div class="ingredients-button-wrap">
               <button id="ingredients-recipe-button-clean" type="button">

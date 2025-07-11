@@ -4,6 +4,7 @@ const Toast = new ToastSystem();
 
 let ingredients = [];
 const selectedIngredients = [];
+let totalRecipe = 0;
 
 const especialCoffeeList = [
   {
@@ -86,18 +87,19 @@ function eventListener() {
       if (!isAdd) {
         if (valueData.additional) {
           if (additionalLength > 1) {
-            Toast.warning("Maximo de ingredientes adicionais atingido!");
+            Toast.warning("Máximo de ingredientes adicionais atingido!");
             return;
           }
         } else {
           if (baseLength > 2) {
-            Toast.warning("Maximo de ingredientes base atingido!");
+            Toast.warning("Máximo de ingredientes base atingido!");
             return;
           }
         }
 
         this.classList.add("selected");
         selectedIngredients.push(valueData);
+        totalRecipe += valueData.price;
 
         const listIngredientsRecipe = document.getElementById(
           "item-list-selection-recipe"
@@ -107,6 +109,12 @@ function eventListener() {
         liElement.textContent = valueData.ingredient;
         liElement.id = valueData.ingredient + "-recipe";
 
+        const spanElement = document.createElement("span");
+        spanElement.textContent = `R$ ${Number(valueData.price).toFixed(2)}`;
+
+        liElement.appendChild(spanElement);
+
+        liElement.classList.add("item-list-selection-recipe");
         listIngredientsRecipe.appendChild(liElement);
       } else {
         const index = selectedIngredients.findIndex(
@@ -115,9 +123,13 @@ function eventListener() {
         if (index > -1) {
           this.classList.remove("selected");
           selectedIngredients.splice(index, 1);
+          totalRecipe -= valueData.price;
           document.getElementById(valueData.ingredient + "-recipe").remove();
         }
       }
+
+      const totalElement = document.getElementById("list-selection-total");
+      totalElement.textContent = `R$ ${Number(totalRecipe).toFixed(2)}`;
 
       if (!valueData.additional) {
         verifyEspecialRecipe();
@@ -142,8 +154,13 @@ function clearRecipe() {
     document.getElementById(i.ingredient + "-recipe").remove();
   });
 
+  totalRecipe = 0;
+
   document.getElementById("coffee-name").textContent = "";
   document.getElementById("especial-coffee-name").textContent = "";
+  document.getElementById("list-selection-total").textContent = `R$ ${Number(
+    totalRecipe
+  ).toFixed(2)}`;
   selectedIngredients.splice(0, selectedIngredients.length);
 }
 
@@ -151,7 +168,7 @@ function submitRecipe() {
   const baseLength = selectedIngredients.filter((i) => !i.additional).length;
 
   if (baseLength == 0) {
-    Toast.error("Minimo 1 ingrediente base deve ser selecionado");
+    Toast.error("Mínimo 1 ingrediente base deve ser selecionado");
   }
 
   fetch("http://localhost:5000/api/v1/order", {
@@ -195,10 +212,10 @@ function verifyEspecialRecipe() {
   });
 
   if (especial) {
-    Toast.info("Cafe especial criado: " + especial.name);
+    Toast.info("Café especial criado: " + especial.name);
     especialCoffeeName.textContent = `${especial.name} Especial:`;
   } else {
-    especialCoffeeName.textContent = `Cafe Personalizado:`;
+    especialCoffeeName.textContent = `Café Personalizado:`;
   }
 }
 
